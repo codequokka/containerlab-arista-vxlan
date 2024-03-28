@@ -1,0 +1,6 @@
+---
+- name: Setup interfaces
+  arista.eos.eos_config:
+    src: interfaces.j2
+    backup: true
+  changed_when: false

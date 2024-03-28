@@ -1,0 +1,7 @@
+ip routing
+{% for r in routers %}
+router {{ r.name }}
+{% for n in r.networks %}
+   network {{ n.network }} area {{ n.area }}
+{% endfor %}
+{% endfor %}

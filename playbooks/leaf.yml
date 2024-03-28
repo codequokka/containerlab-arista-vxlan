@@ -1,0 +1,6 @@
+---
+- name: Setup leaf
+  hosts: leaf
+  gather_facts: no
+  roles:
+    - leaf

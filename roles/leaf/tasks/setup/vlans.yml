@@ -1,0 +1,6 @@
+---
+- name: Setup vlans
+  arista.eos.eos_config:
+    src: vlans.j2
+    backup: true
+  changed_when: false

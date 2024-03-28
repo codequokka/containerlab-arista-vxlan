@@ -1,0 +1,8 @@
+{% for i in interfaces %}
+{% if i.name.startswith('Vxlan') %}
+interface {{ i.name }}
+   vxlan source-interface {{ i.source_interface }}
+   vxlan vlan {{ i.vlan }} vni {{ i.vni }}
+   vxlan flood vtep {{ i.vtep }}
+{% endif %}
+{% endfor %}

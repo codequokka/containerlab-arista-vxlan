@@ -1,0 +1,4 @@
+---
+- import_playbook: host.yml
+- import_playbook: leaf.yml
+- import_playbook: spine.yml

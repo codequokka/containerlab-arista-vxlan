@@ -1,0 +1,5 @@
+*.tar.xz
+*.bak
+.venv/
+backup/
+clab-arista-ceos

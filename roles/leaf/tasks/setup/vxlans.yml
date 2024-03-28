@@ -1,0 +1,6 @@
+---
+- name: Setup vxlans
+  arista.eos.eos_config:
+    src: vxlans.j2
+    backup: true
+  changed_when: false

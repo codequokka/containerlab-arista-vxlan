@@ -1,0 +1,19 @@
+{% for i in interfaces %}
+{% if i.name.startswith('Management') and i.mode == "l3" %}
+interface {{ i.name }}
+   ip address {{ i.ip_address }}
+{% endif %}
+{% if i.name.startswith('Loopback') and i.mode == "l3" %}
+interface {{ i.name }}
+   ip address {{ i.ip_address }}
+{% endif %}
+{% if i.name.startswith('Ethernet') and i.mode == "l3" %}
+interface {{ i.name }}
+   no switchport
+   ip address {{ i.ip_address }}
+{% endif %}
+{% if i.name.startswith('Ethernet') and i.mode == "l2" %}
+interface {{ i.name }}
+   switchport access vlan {{ i.vlan }}
+{% endif %}
+{% endfor %}

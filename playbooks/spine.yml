@@ -1,0 +1,6 @@
+---
+- name: Setup spine
+  hosts: spine
+  gather_facts: no
+  roles:
+    - spine

@@ -1,0 +1,12 @@
+---
+- import_tasks: setup/vlans.yml
+  tags: setup_initial
+
+- import_tasks: setup/interfaces.yml
+  tags: setup_initial
+
+- import_tasks: setup/routers.yml
+  tags: setup_initial
+
+- import_tasks: setup/vxlans.yml
+  tags: setup_vxlans

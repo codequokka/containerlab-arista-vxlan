@@ -1,0 +1,6 @@
+---
+- name: Setup routers
+  arista.eos.eos_config:
+    src: routers.j2
+    backup: true
+  changed_when: false

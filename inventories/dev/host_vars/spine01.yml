@@ -1,0 +1,27 @@
+---
+interfaces:
+  - name: Management1
+    mode: l3
+    ip_address: 192.168.1.43/24
+
+  - name: Loopback0
+    mode: l3
+    ip_address: 10.3.3.3/32
+
+  - name: Ethernet1
+    mode: l3
+    ip_address: 192.168.13.3/24
+
+  - name: Ethernet2
+    mode: l3
+    ip_address: 192.168.23.1/24
+
+routers:
+  - name: ospf 1
+    networks:
+      - network: 10.3.3.3/32
+        area: 0.0.0.0
+      - network: 192.168.13.0/24
+        area: 0.0.0.0
+      - network: 192.168.23.0/24
+        area: 0.0.0.0
