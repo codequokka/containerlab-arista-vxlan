@@ -8,19 +8,32 @@ topology:
     #   image: ghcr.io/hellt/network-multitool
 
   nodes:
-    leaf01:
-      kind: ceos
-    leaf02:
-      kind: ceos
     spine01:
       kind: ceos
+      mgmt-ipv4: 172.20.20.2
+    leaf01:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.3
+    leaf02:
+      kind: ceos
+      mgmt-ipv4: 172.20.20.4
     host01:
       kind: ceos
+      mgmt-ipv4: 172.20.20.5
     host02:
       kind: ceos
+      mgmt-ipv4: 172.20.20.6
 
   links:
-    - endpoints: ["host01:eth1", "leaf01:eth2"]
-    - endpoints: ["leaf01:eth1", "spine01:eth1"]
-    - endpoints: ["leaf02:eth1", "spine01:eth2"]
-    - endpoints: ["host02:eth1", "leaf02:eth2"]
+    - endpoints:
+      - host01:eth1
+      - leaf01:eth2
+    - endpoints:
+      - leaf01:eth1
+      - spine01:eth1
+    - endpoints:
+      - leaf02:eth1
+      - spine01:eth2
+    - endpoints:
+      - host02:eth1
+      - leaf02:eth2
