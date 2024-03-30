@@ -2,15 +2,15 @@
 interfaces:
   - name: Management1
     mode: l3
-    ip_address: 192.168.1.42/24
+    ip_address: 192.168.0.2/24
 
   - name: Loopback0
     mode: l3
-    ip_address: 10.1.1.1/32
+    ip_address: 10.2.2.2/32
 
   - name: Ethernet1
     mode: l3
-    ip_address: 192.168.13.1/24
+    ip_address: 192.168.11.2/24
 
   - name: Ethernet2
     mode: l2
@@ -20,12 +20,12 @@ interfaces:
     source_interface: Loopback0
     vlan: 100
     vni: 90100
-    vtep: 10.2.2.2
+    vtep: 10.3.3.3
 
 routers:
   - name: ospf 1
     networks:
-      - network: 10.1.1.1/32
+      - network: 10.2.2.2/32
         area: 0.0.0.0
-      - network: 192.168.13.0/24
+      - network: 192.168.11.0/24
         area: 0.0.0.0

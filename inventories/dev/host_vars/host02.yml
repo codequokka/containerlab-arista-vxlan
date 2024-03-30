@@ -2,8 +2,8 @@
 interfaces:
   - name: Management1
     mode: l3
-    ip_address: 192.168.1.45/24
+    ip_address: 192.168.0.5/24
 
   - name: Ethernet1
     mode: l3
-    ip_address: 192.168.100.2/24
+    ip_address: 192.168.1.2/24
